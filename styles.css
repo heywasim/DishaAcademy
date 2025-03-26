@@ -13,22 +13,38 @@ header {
     padding: 15px 0; 
     display: flex; 
     align-items: center; 
-    justify-content: center; 
+    justify-content: space-between;  /* Changed to space-between */
     position: relative; 
     top: 0;
     width: 100%;
     z-index: 1000;
+    padding-left: 20px;  /* Added padding to the left */
+    padding-right: 20px; /* Added padding to the right */
 }
 
-header img { height: 50px; margin-right: 15px; }
-h1 { margin: 0; font-size: 24px; }
-.container { padding: 20px; background: rgba(0, 0, 0, 0.5); border-radius: 10px; display: inline-block; }
+header img { 
+    height: 50px; 
+    margin-right: 15px; 
+}
 
+h1 { 
+    margin: 0; 
+    font-size: 24px; 
+}
+
+.container { 
+    padding: 20px; 
+    background: rgba(0, 0, 0, 0.5); 
+    border-radius: 10px; 
+    display: inline-block; 
+}
 
 nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
+  margin: 0;
+  padding: 0;
 }
 
 nav ul li {
