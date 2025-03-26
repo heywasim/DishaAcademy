@@ -62,3 +62,42 @@ h1 { margin: 0; font-size: 24px; }
     80% { opacity: 1; }
     100% { opacity: 0; }
 }
+
+.team-section {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.photo-box {
+    width: 30%;
+    aspect-ratio: 1 / 1; /* Square Shape */
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.photo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.text-box {
+    width: 65%;
+    padding: 15px;
+    background: rgba(0, 0, 255, 0.1);
+    border-radius: 10px;
+}
+
+.reverse {
+    flex-direction: row-reverse;
+}
+
