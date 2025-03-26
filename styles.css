@@ -112,7 +112,7 @@ nav ul li a:hover {
 
 .photo-box {
     width: 30%;
-    aspect-ratio: 3 / 4; /* Square Shape */
+    aspect-ratio: 1 / 1; /* Square Shape */
     overflow: hidden;
     border-radius: 50%;
 }
