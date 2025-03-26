@@ -12,60 +12,45 @@ function fetchData() {
             var resultTable = document.getElementById('resultTable');
             resultTable.innerHTML = ""; // Clear any previous results
 
-            // Add table headers
-            var headerRow = resultTable.insertRow();
-            headerRow.insertCell(0).innerText = "Field";
-            headerRow.insertCell(1).innerText = "Value";
-
-            // Flag to track if any result is found
+            // Loop through data and display results based on class and roll number
             let found = false;
 
-            // Loop through data and display results based on class and roll number
             for (var i = 1; i < data.length; i++) {
                 var row = data[i];
                 if (row[1] == className && row[2] == rollNumber) {
                     found = true; // Mark as found
-                    var newRow;
+                    var newRow = resultTable.insertRow();
 
-                    // Vertically display data
-                    newRow = resultTable.insertRow();
-                    newRow.insertCell(0).innerText = "Student Name";
-                    newRow.insertCell(1).innerText = row[0]; // Student Name
+                    var nameCell = newRow.insertCell(0);
+                    nameCell.innerHTML = "Student Name: " + row[0];
 
-                    newRow = resultTable.insertRow();
-                    newRow.insertCell(0).innerText = "Class";
-                    newRow.insertCell(1).innerText = row[1]; // Class
+                    var classCell = newRow.insertCell(1);
+                    classCell.innerHTML = "Class: " + row[1];
 
-                    newRow = resultTable.insertRow();
-                    newRow.insertCell(0).innerText = "Roll Number";
-                    newRow.insertCell(1).innerText = row[2]; // Roll Number
+                    var rollCell = newRow.insertCell(2);
+                    rollCell.innerHTML = "Roll Number: " + row[2];
 
-                    newRow = resultTable.insertRow();
-                    newRow.insertCell(0).innerText = "Math";
-                    newRow.insertCell(1).innerText = row[3]; // Math
+                    var mathCell = newRow.insertCell(3);
+                    mathCell.innerHTML = "Math: " + row[3];
 
-                    newRow = resultTable.insertRow();
-                    newRow.insertCell(0).innerText = "Science";
-                    newRow.insertCell(1).innerText = row[4]; // Science
+                    var scienceCell = newRow.insertCell(4);
+                    scienceCell.innerHTML = "Science: " + row[4];
 
-                    newRow = resultTable.insertRow();
-                    newRow.insertCell(0).innerText = "English";
-                    newRow.insertCell(1).innerText = row[5]; // English
+                    var englishCell = newRow.insertCell(5);
+                    englishCell.innerHTML = "English: " + row[5];
 
-                    newRow = resultTable.insertRow();
-                    newRow.insertCell(0).innerText = "History";
-                    newRow.insertCell(1).innerText = row[6]; // History
+                    var historyCell = newRow.insertCell(6);
+                    historyCell.innerHTML = "History: " + row[6];
 
-                    newRow = resultTable.insertRow();
-                    newRow.insertCell(0).innerText = "Geography";
-                    newRow.insertCell(1).innerText = row[7]; // Geography
+                    var geographyCell = newRow.insertCell(7);
+                    geographyCell.innerHTML = "Geography: " + row[7];
                 }
             }
 
             // If no results were found, display a message
             if (!found) {
                 var noResultRow = resultTable.insertRow();
-                noResultRow.insertCell(0).colSpan = 2; // Make this row span both columns
+                noResultRow.insertCell(0).colSpan = 8; // Make this row span all columns
                 noResultRow.cells[0].innerText = "No results found for the given class and roll number.";
             }
         })
