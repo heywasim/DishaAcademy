@@ -3,10 +3,10 @@ const slides = document.querySelectorAll(".slide");
 
 function showSlides() {
     slides.forEach((slide, i) => {
-        slide.style.display = (i === index) ? "block" : "none";
+        slide.style.opacity = (i === index) ? "1" : "0";
     });
     index = (index + 1) % slides.length;
 }
 
-setInterval(showSlides, 3000);
+setInterval(showSlides, 4000); // 4 sec per slide
 showSlides();
