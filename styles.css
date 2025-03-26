@@ -47,7 +47,7 @@ h1 { margin: 0; font-size: 24px; }
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    border: 5px solid black; /* Border issue fixed */
+    border: 5px solid  rgba(255, 255, 255, 0.7);; /* Border issue fixed */
     border-radius: 40px;
     opacity: 0;
     transition: opacity 1.5s ease-in-out;
@@ -79,14 +79,14 @@ h1 { margin: 0; font-size: 24px; }
     width: 30%;
     aspect-ratio: 3 / 4; /* Square Shape */
     overflow: hidden;
-    border-radius: 0px;
+    border-radius: 5px;
 }
 
 .photo-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 0px;
+    border-radius: 5px;
 }
 
 .text-box {
