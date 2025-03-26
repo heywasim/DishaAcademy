@@ -1,91 +1,37 @@
-// Function to fetch data from Google Sheet
-function fetchData() {
-    var className = document.getElementById('class').value;
-    var rollNumber = document.getElementById('roll').value;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Result</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Add your styles.css if you want custom styles -->
+</head>
+<body>
+    <h2>Search Student Result</h2>
+    <form id="searchForm">
+        <label for="class">Class:</label>
+        <input type="text" id="class" name="class" placeholder="Enter Class (e.g., 5th)"><br><br>
 
-    var sheetUrl = 'https://docs.google.com/spreadsheets/d/2PACX-1vSfptSg0SNcIpNqjIVjLdOiHOwbzAYYTHScxI1El4zSLvfK-eP1lpnPME3TUQ6BDpGGrySIyY-ISecC/export?format=csv'; // Your sheet URL
+        <label for="roll">Roll Number:</label>
+        <input type="text" id="roll" name="roll" placeholder="Enter Roll Number"><br><br>
 
-    fetch(sheetUrl)
-        .then(response => response.text())
-        .then(csvData => {
-            var data = CSVToArray(csvData);
-            var resultTable = document.getElementById('resultTable');
-            resultTable.innerHTML = ""; // Clear any previous results
+        <input type="submit" value="Search">
+    </form>
 
-            // Add table headers
-            var headerRow = resultTable.insertRow();
-            headerRow.insertCell(0).innerText = "Field";
-            headerRow.insertCell(1).innerText = "Value";
+    <h3>Result:</h3>
+    <table id="resultTable">
+        <!-- Results will be displayed here -->
+    </table>
 
-            // Flag to track if any result is found
-            let found = false;
+    <script src="script1.js"></script> <!-- Link to your external JS file -->
+</body>
 
-            // Loop through data and display results based on class and roll number
-            for (var i = 1; i < data.length; i++) {
-                var row = data[i];
-                if (row[1] == className && row[2] == rollNumber) {
-                    found = true; // Mark as found
-                    var newRow;
-
-                    // Vertically display data
-                    newRow = resultTable.insertRow();
-                    newRow.insertCell(0).innerText = "Student Name";
-                    newRow.insertCell(1).innerText = row[0]; // Student Name
-
-                    newRow = resultTable.insertRow();
-                    newRow.insertCell(0).innerText = "Class";
-                    newRow.insertCell(1).innerText = row[1]; // Class
-
-                    newRow = resultTable.insertRow();
-                    newRow.insertCell(0).innerText = "Roll Number";
-                    newRow.insertCell(1).innerText = row[2]; // Roll Number
-
-                    newRow = resultTable.insertRow();
-                    newRow.insertCell(0).innerText = "Math";
-                    newRow.insertCell(1).innerText = row[3]; // Math
-
-                    newRow = resultTable.insertRow();
-                    newRow.insertCell(0).innerText = "Science";
-                    newRow.insertCell(1).innerText = row[4]; // Science
-
-                    newRow = resultTable.insertRow();
-                    newRow.insertCell(0).innerText = "English";
-                    newRow.insertCell(1).innerText = row[5]; // English
-
-                    newRow = resultTable.insertRow();
-                    newRow.insertCell(0).innerText = "History";
-                    newRow.insertCell(1).innerText = row[6]; // History
-
-                    newRow = resultTable.insertRow();
-                    newRow.insertCell(0).innerText = "Geography";
-                    newRow.insertCell(1).innerText = row[7]; // Geography
-                }
-            }
-
-            // If no results were found, display a message
-            if (!found) {
-                var noResultRow = resultTable.insertRow();
-                noResultRow.insertCell(0).colSpan = 2; // Make this row span both columns
-                noResultRow.cells[0].innerText = "No results found for the given class and roll number.";
-            }
-        })
-        .catch(error => {
-            console.error("Error fetching data", error);
-        });
-}
-
-// Convert CSV data to array
-function CSVToArray(csv) {
-    var rows = csv.split("\n");
-    var result = [];
-    for (var i = 0; i < rows.length; i++) {
-        result.push(rows[i].split(","));
-    }
-    return result;
-}
-
-// Event listener for form submission
-document.getElementById('searchForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form from refreshing the page
-    fetchData(); // Fetch and display the data
-});
+<footer>
+    <div class="footer-content">
+        <p><strong>📍 ঠিকানা:</strong> Disha Academy, Kamarpara Baligram, Ranitala, Murshidabd, 742135</p>
+        <p><strong>📞 যোগাযোগ:</strong> +91 9735803060</p>
+        <p><strong>✉️ ইমেইল:</strong> dishaacademy.com@gmail.com</p>
+        <p>&copy; 2025 Disha Academy | সর্বস্বত্ব সংরক্ষিত</p>
+    </div>
+</footer>
+</html>
