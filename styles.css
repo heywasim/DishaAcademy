@@ -155,9 +155,11 @@ h2 {
 }
 
 table {
-    width: 100%;
+        width: 50%; /* Default for laptops */
     border-collapse: collapse;
     margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 table th, table td {
