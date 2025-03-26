@@ -155,7 +155,7 @@ h2 {
 }
 
 table {
-        width: 50%; /* Default for laptops */
+        width: 80%; /* Default for laptops */
     border-collapse: collapse;
     margin-top: 20px;
     margin-left: auto;
