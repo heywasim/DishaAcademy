@@ -3,6 +3,12 @@ function fetchData() {
     var className = document.getElementById('class').value;
     var rollNumber = document.getElementById('roll').value;
 
+    // Validate input fields
+    if (!className || !rollNumber) {
+        alert("Please enter both Class and Roll Number.");
+        return;
+    }
+
     var sheetUrl = 'https://docs.google.com/spreadsheets/d/2PACX-1vSfptSg0SNcIpNqjIVjLdOiHOwbzAYYTHScxI1El4zSLvfK-eP1lpnPME3TUQ6BDpGGrySIyY-ISecC/export?format=csv'; // Your sheet URL
 
     fetch(sheetUrl)
@@ -54,3 +60,19 @@ function fetchData() {
             console.error("Error fetching data", error);
         });
 }
+
+// Convert CSV data to array
+function CSVToArray(csv) {
+    var rows = csv.split("\n");
+    var result = [];
+    for (var i = 0; i < rows.length; i++) {
+        result.push(rows[i].split(","));
+    }
+    return result;
+}
+
+// Event listener for form submission
+document.getElementById('searchForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form from refreshing the page
+    fetchData(); // Fetch and display the data
+});
