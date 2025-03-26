@@ -82,8 +82,8 @@ nav ul li a:hover {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    border: 5px solid  rgba(255, 255, 255, 0.7);; /* Border issue fixed */
-    border-radius: 40px;
+    border: 5px solid  rgba(161, 214, 226, 1);; /* Border issue fixed */
+    border-radius: 10%;
     opacity: 0;
     transition: opacity 1.5s ease-in-out;
 }
