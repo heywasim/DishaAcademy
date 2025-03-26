@@ -3,12 +3,12 @@ body {
     margin: 0; 
     padding: 0; 
     text-align: center; 
-    background: rgb(41, 187, 217); /* Light off-white color */ 
+    background: rgb(252, 251, 240); /* Light off-white color */ 
     color: black;
 }
 
 header { 
-    background-color: rgba(3, 136, 252, 1);
+    background-color: rgba(41, 187, 217, 1);
     color: white; 
     padding: 15px 0; 
     display: flex; 
