@@ -52,10 +52,6 @@ h1 { margin: 0; font-size: 24px; }
     transition: opacity 1s ease-in-out;
 }
 
-.fade {
-    animation: fadeEffect 4s infinite;
-}
-
 /* 🔹 Fade-Out Effect */
 @keyframes fadeEffect {
     0% { opacity: 1; }
@@ -63,6 +59,7 @@ h1 { margin: 0; font-size: 24px; }
     100% { opacity: 0; }
 }
 
+/* 🔹 Team Section */
 .team-section {
     width: 80%;
     margin: auto;
@@ -100,4 +97,3 @@ h1 { margin: 0; font-size: 24px; }
 .reverse {
     flex-direction: row-reverse;
 }
-
