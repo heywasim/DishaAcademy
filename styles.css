@@ -26,11 +26,11 @@ h1 { margin: 0; font-size: 24px; }
 
 /* 🔹 Slider Section */
 .slider {
-    width: 100%;
+    width: 90%;
     height: 320px;
     overflow: hidden;
     position: relative;
-    margin-top: 70px;
+    margin-top: 10px;
 }
 
 .slides {
@@ -75,9 +75,9 @@ h1 { margin: 0; font-size: 24px; }
 
 .photo-box {
     width: 30%;
-    aspect-ratio: 1 / 1; /* Square Shape */
+    aspect-ratio: 3 / 4; /* Square Shape */
     overflow: hidden;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 .photo-box img {
