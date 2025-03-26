@@ -149,7 +149,6 @@ footer {
 
 /* 🔹 exam er table er jonno */
 
-
 h2 {
     text-align: center;
     color: #1a73e8;
@@ -162,9 +161,9 @@ table {
 }
 
 table th, table td {
+    border: 1px solid black;
     padding: 10px;
     text-align: left;
-    border: 1px solid #ddd;
 }
 
 table th {
@@ -179,4 +178,3 @@ table tr:nth-child(even) {
 table tr:hover {
     background-color: #ddd;
 }
-
