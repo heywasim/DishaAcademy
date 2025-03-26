@@ -14,15 +14,38 @@ function fetchData() {
             resultTable.innerHTML = ""; // Clear any previous results
 
             // Add table headers
-            var headerRow = resultTable.insertRow();
-            headerRow.insertCell(0).innerText = "Student Name";
-            headerRow.insertCell(1).innerText = "Class";
-            headerRow.insertCell(2).innerText = "Roll Number";
-            headerRow.insertCell(3).innerText = "Math";
-            headerRow.insertCell(4).innerText = "Science";
-            headerRow.insertCell(5).innerText = "English";
-            headerRow.insertCell(6).innerText = "History";
-            headerRow.insertCell(7).innerText = "Geography";
+            var newRow = resultTable.insertRow(); // Row for "Student Name"
+newRow.insertCell(0).innerText = "Student Name";  // Header
+newRow.insertCell(1).innerText = row[0]; // Student's name
+
+newRow = resultTable.insertRow(); // Row for "Class"
+newRow.insertCell(0).innerText = "Class";  // Header
+newRow.insertCell(1).innerText = row[1]; // Student's class
+
+newRow = resultTable.insertRow(); // Row for "Roll Number"
+newRow.insertCell(0).innerText = "Roll Number"; // Header
+newRow.insertCell(1).innerText = row[2]; // Student's roll number
+
+newRow = resultTable.insertRow(); // Row for "Math"
+newRow.insertCell(0).innerText = "Math"; // Header
+newRow.insertCell(1).innerText = row[3]; // Math score
+
+newRow = resultTable.insertRow(); // Row for "Science"
+newRow.insertCell(0).innerText = "Science"; // Header
+newRow.insertCell(1).innerText = row[4]; // Science score
+
+newRow = resultTable.insertRow(); // Row for "English"
+newRow.insertCell(0).innerText = "English"; // Header
+newRow.insertCell(1).innerText = row[5]; // English score
+
+newRow = resultTable.insertRow(); // Row for "History"
+newRow.insertCell(0).innerText = "History"; // Header
+newRow.insertCell(1).innerText = row[6]; // History score
+
+newRow = resultTable.insertRow(); // Row for "Geography"
+newRow.insertCell(0).innerText = "Geography"; // Header
+newRow.insertCell(1).innerText = row[7]; // Geography score
+
 
             // Flag to track if any result is found
             let found = false;
