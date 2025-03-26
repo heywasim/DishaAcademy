@@ -23,10 +23,14 @@ function fetchData() {
             headerRow.insertCell(6).innerText = "History";
             headerRow.insertCell(7).innerText = "Geography";
 
+            // Flag to track if any result is found
+            let found = false;
+
             // Loop through data and display results based on class and roll number
             for (var i = 1; i < data.length; i++) {
                 var row = data[i];
                 if (row[1] == className && row[2] == rollNumber) {
+                    found = true; // Mark as found
                     var newRow = resultTable.insertRow();
                     newRow.insertCell(0).innerText = row[0]; // Student Name
                     newRow.insertCell(1).innerText = row[1]; // Class
@@ -38,24 +42,15 @@ function fetchData() {
                     newRow.insertCell(7).innerText = row[7]; // Geography
                 }
             }
+
+            // If no results were found, display a message
+            if (!found) {
+                var noResultRow = resultTable.insertRow();
+                noResultRow.insertCell(0).colSpan = 8; // Make this row span all columns
+                noResultRow.cells[0].innerText = "No results found for the given class and roll number.";
+            }
         })
         .catch(error => {
             console.error("Error fetching data", error);
         });
 }
-
-// Convert CSV data to array
-function CSVToArray(csv) {
-    var rows = csv.split("\n");
-    var result = [];
-    for (var i = 0; i < rows.length; i++) {
-        result.push(rows[i].split(","));
-    }
-    return result;
-}
-
-// Event listener for form submission
-document.getElementById('searchForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form from refreshing the page
-    fetchData(); // Fetch and display the data
-});
