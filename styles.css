@@ -3,7 +3,7 @@ body {
     margin: 0; 
     padding: 0; 
     text-align: center; 
-    background: url('school.jpg') no-repeat center center/cover; 
+    background: url('school.jpg') repeat center center/cover; 
     color: white;
 }
 header { 
