@@ -55,8 +55,8 @@ h1 { margin: 0; font-size: 24px; }
 /* 🔹 Fade-Out Effect */
 @keyframes fadeEffect {
     0% { opacity: 1; }
-    80% { opacity: 1; }
-    100% { opacity: 0; }
+    80% { opacity: 0.8; }
+    100% { opacity: 0.3; }
 }
 
 /* 🔹 Team Section */
