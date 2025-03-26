@@ -79,20 +79,20 @@ h1 { margin: 0; font-size: 24px; }
     width: 30%;
     aspect-ratio: 3 / 4; /* Square Shape */
     overflow: hidden;
-    border-radius: 20px;
+    border-radius: 0px;
 }
 
 .photo-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 0px;
 }
 
 .text-box {
     width: 65%;
     padding: 15px;
-    background: rgba(253, 4, 145, 0.5);
+    background: rgba(16, 16, 16, 0.3);
     border-radius: 10px;
 }
 
