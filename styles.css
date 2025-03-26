@@ -97,3 +97,15 @@ h1 { margin: 0; font-size: 24px; }
 .reverse {
     flex-direction: row-reverse;
 }
+
+footer {
+    background-color: rgba(0, 0, 0, 0.8); /* Dark Transparent Background */
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+}
+
+.footer-content p {
+    margin: 5px 0;
+}
