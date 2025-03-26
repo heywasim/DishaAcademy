@@ -3,7 +3,8 @@ function fetchData() {
     var className = document.getElementById('class').value;
     var rollNumber = document.getElementById('roll').value;
 
-    var sheetUrl = 'https://docs.google.com/spreadsheets/d/2PACX-1vSfptSg0SNcIpNqjIVjLdOiHOwbzAYYTHScxI1El4zSLvfK-eP1lpnPME3TUQ6BDpGGrySIyY-ISecC/export?format=csv'; // Your sheet URL
+    // Update with the actual export CSV URL
+    var sheetUrl = 'https://docs.google.com/spreadsheets/d/1vllKIHCAQn5cWdbOmQK3__v9oPfYcV-pgW9RYETuvxo/export?format=csv'; 
 
     fetch(sheetUrl)
         .then(response => response.text())
@@ -12,38 +13,34 @@ function fetchData() {
             var resultTable = document.getElementById('resultTable');
             resultTable.innerHTML = ""; // Clear any previous results
 
-            // Loop through data and display results based on class and roll number
+            // Add table headers
+            var headerRow = resultTable.insertRow();
+            headerRow.insertCell(0).innerText = "Student Name";
+            headerRow.insertCell(1).innerText = "Class";
+            headerRow.insertCell(2).innerText = "Roll Number";
+            headerRow.insertCell(3).innerText = "Math";
+            headerRow.insertCell(4).innerText = "Science";
+            headerRow.insertCell(5).innerText = "English";
+            headerRow.insertCell(6).innerText = "History";
+            headerRow.insertCell(7).innerText = "Geography";
+
+            // Flag to track if any result is found
             let found = false;
 
+            // Loop through data and display results based on class and roll number
             for (var i = 1; i < data.length; i++) {
                 var row = data[i];
                 if (row[1] == className && row[2] == rollNumber) {
                     found = true; // Mark as found
                     var newRow = resultTable.insertRow();
-
-                    var nameCell = newRow.insertCell(0);
-                    nameCell.innerHTML = "Student Name: " + row[0];
-
-                    var classCell = newRow.insertCell(1);
-                    classCell.innerHTML = "Class: " + row[1];
-
-                    var rollCell = newRow.insertCell(2);
-                    rollCell.innerHTML = "Roll Number: " + row[2];
-
-                    var mathCell = newRow.insertCell(3);
-                    mathCell.innerHTML = "Math: " + row[3];
-
-                    var scienceCell = newRow.insertCell(4);
-                    scienceCell.innerHTML = "Science: " + row[4];
-
-                    var englishCell = newRow.insertCell(5);
-                    englishCell.innerHTML = "English: " + row[5];
-
-                    var historyCell = newRow.insertCell(6);
-                    historyCell.innerHTML = "History: " + row[6];
-
-                    var geographyCell = newRow.insertCell(7);
-                    geographyCell.innerHTML = "Geography: " + row[7];
+                    newRow.insertCell(0).innerText = row[0]; // Student Name
+                    newRow.insertCell(1).innerText = row[1]; // Class
+                    newRow.insertCell(2).innerText = row[2]; // Roll Number
+                    newRow.insertCell(3).innerText = row[3]; // Math
+                    newRow.insertCell(4).innerText = row[4]; // Science
+                    newRow.insertCell(5).innerText = row[5]; // English
+                    newRow.insertCell(6).innerText = row[6]; // History
+                    newRow.insertCell(7).innerText = row[7]; // Geography
                 }
             }
 
