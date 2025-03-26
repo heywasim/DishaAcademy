@@ -8,7 +8,7 @@ body {
 }
 
 header { 
-    background-color: rgba(55, 0, 28, 1);
+    background-color: rgba(12, 33, 85, 1);
     color: white; 
     padding: 15px 0; 
     display: flex; 
@@ -46,10 +46,10 @@ h1 { margin: 0; font-size: 24px; }
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    border: 10px solid blue;
-    border-radius: 20px;
+    border: 5px black;
+    border-radius: 40px;
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 1.5s ease-in-out;
 }
 
 /* 🔹 Fade-Out Effect */
