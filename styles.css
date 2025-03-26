@@ -3,7 +3,7 @@ body {
     margin: 0; 
     padding: 0; 
     text-align: center; 
-    background: url('bg01.png') repeat; 
+    background: rgb(250, 249, 246); /* Light off-white color */ 
     color: white;
 }
 
