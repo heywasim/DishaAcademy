@@ -5,6 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Result</title>
     <link rel="stylesheet" href="styles.css"> <!-- Add your styles.css if you want custom styles -->
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        /* Style to make the data show vertically */
+        .vertical-table {
+            width: 300px; /* Adjust width for vertical layout */
+            margin: 0 auto;
+        }
+
+        .vertical-table th {
+            text-align: center;
+        }
+
+        .vertical-table td {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .result-row {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .result-row td {
+            width: 100%; /* Make each cell take full width */
+        }
+    </style>
 </head>
 <body>
     <h2>Search Student Result</h2>
@@ -19,20 +59,10 @@
     </form>
 
     <h3>Result:</h3>
-    <table id="resultTable">
+    <table id="resultTable" class="vertical-table">
         <!-- Results will be displayed here -->
     </table>
 
     <script src="script1.js"></script> <!-- Link to your external JS file -->
 </body>
-
-< <footer>
-    <div class="footer-content">
-        <p><strong>Address</strong> Disha Academy, Kamarpara Baligram, Ranitala, Murshidabd, 742135</p>
-        <p><strong>📞 Helpline</strong> +91 9735803060</p>
-        <p><strong>✉️ Email:</strong> dishaacademy.com@gmail.com</p>
-        <p>&copy; Developed by David</p>
-    </div>
-</footer>
-
 </html>
