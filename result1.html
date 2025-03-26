@@ -25,7 +25,17 @@
     <h2>Search Student Result</h2>
     <form id="searchForm">
         <label for="class">Class:</label>
-        <input type="text" id="class" name="class" placeholder="Enter Class (e.g., 5th)"><br><br>
+<select id="class" name="class">
+    <option value="" disabled selected>Select Class</option>
+    <option value="LKG">LKG</option>
+    <option value="UKG">UKG</option>
+    <option value="1st">1st</option>
+    <option value="2nd">2nd</option>
+    <option value="3rd">3rd</option>
+    <option value="4th">4th</option>
+</select>
+<br><br>
+
 
         <label for="roll">Roll Number:</label>
         <input type="text" id="roll" name="roll" placeholder="Enter Roll Number"><br><br>
