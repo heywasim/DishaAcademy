@@ -42,7 +42,18 @@
         </select><br><br>
 
         <label for="roll">Roll Number:</label>
-        <input type="text" id="roll" name="roll" placeholder="Enter Roll Number"><br><br>
+       <label for="roll">Roll Number:</label>
+<select id="roll" name="roll">
+  <option value="" disabled selected>Select Roll Number</option>
+  <!-- Roll numbers 1 to 40 -->
+  <script>
+    for (let i = 1; i <= 40; i++) {
+      document.write(`<option value="${i}">${i}</option>`);
+    }
+  </script>
+</select>
+<br><br>
+
 
         <input type="submit" value="Search">
     </form>
