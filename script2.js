@@ -37,7 +37,7 @@ function fetchData() {
             if (!found) {
                 const noResultRow = resultTable.insertRow();
                 noResultRow.insertCell(0).colSpan = 2;
-                noResultRow.cells[0].innerText = "No result found for given Class and Roll Number.";
+                noResultRow.cells[0].innerText = "No result found - Contact 9735803060.";
             }
 
             loadingDiv.style.display = 'none';
