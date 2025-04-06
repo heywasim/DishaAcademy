@@ -4,38 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Term 1 Result</title>
-    <header>
-  <div class="top-bar">
-    <img src="logo.png" alt="Disha Academy Logo">
-    <h1>Disha Academy</h1>
-  </div>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="exam.html">Examination</a></li>
-    </ul>
-  </nav>
-</header>
-
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        #loading { display: none; color: blue; font-weight: bold; margin: 10px 0; }
+        table, td { border: 1px solid black; border-collapse: collapse; padding: 8px; }
+    </style>
 </head>
 <body>
 
+    <header>
+        <div class="top-bar">
+            <img src="logo.png" alt="Disha Academy Logo" height="50">
+            <h1>Disha Academy</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="exam.html">Examination</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <h2>Search Student Result</h2>
+
     <form id="searchForm">
         <label for="class">Class:</label>
-<select id="class" name="class">
-    <option value="" disabled selected>Select Class</option>
-    <option value="LKG">LKG</option>
-    <option value="UKG">UKG</option>
-    <option value="1st">1st</option>
-    <option value="2nd">2nd</option>
-    <option value="3rd">3rd</option>
-    <option value="4th">4th</option>
-</select>
-<br><br>
-
+        <select id="class" name="class">
+            <option value="" disabled selected>Select Class</option>
+            <option value="LKG">LKG</option>
+            <option value="UKG">UKG</option>
+            <option value="1st">1st</option>
+            <option value="2nd">2nd</option>
+            <option value="3rd">3rd</option>
+            <option value="4th">4th</option>
+        </select><br><br>
 
         <label for="roll">Roll Number:</label>
         <input type="text" id="roll" name="roll" placeholder="Enter Roll Number"><br><br>
@@ -43,19 +47,20 @@
         <input type="submit" value="Search">
     </form>
 
-    <h3>Result:</h3>
-    <table id="resultTable">
-        <!-- Results will be displayed here -->
-    </table>
+    <div id="loading">Loading, please wait...</div>
 
-    <script src="script2.js"></script> <!-- Link to your external JS file -->
+    <h3>Result:</h3>
+    <table id="resultTable"></table>
+
+    <footer>
+        <div class="footer-content">
+            <p><strong>Address:</strong> Disha Academy, Kamarpara Baligram, Ranitala, Murshidabd, 742135</p>
+            <p><strong>📞 Helpline:</strong> +91 9735803060</p>
+            <p><strong>✉️ Email:</strong> dishaacademy.com@gmail.com</p>
+            <p>&copy; Developed by David</p>
+        </div>
+    </footer>
+
+    <script src="script1.js"></script>
 </body>
-<footer>
-    <div class="footer-content">
-        <p><strong>Address:</strong> Disha Academy, Kamarpara Baligram, Ranitala, Murshidabd, 742135</p>
-        <p><strong>📞 Helpline</strong> +91 9735803060</p>
-        <p><strong>✉️ Email:</strong> dishaacademy.com@gmail.com</p>
-        <p>&copy; Developed by David</p>
-    </div>
-</footer>
 </html>
