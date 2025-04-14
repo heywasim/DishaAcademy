@@ -83,7 +83,7 @@ nav ul li a:hover {
     left: 50%;
     transform: translateX(-50%);
     border: 5px solid  rgba(161, 214, 226, 1);; /* Border issue fixed */
-    border-radius: 10%;
+    border-radius: 5%;
     opacity: 0;
     transition: opacity 1.5s ease-in-out;
 }
