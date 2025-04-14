@@ -95,6 +95,33 @@ nav ul li a:hover {
     80% { opacity: 0.8; }
     100% { opacity: 0.3; }
 }
+/* 🔹 latest news er jonno */
+.news-section {
+  display: flex;
+  align-items: center;
+  border: 2px solid #007bff;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 20px 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.news-label {
+  width: 20%;
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+.news-marquee {
+  width: 80%;
+  background-color: #eaf4ff;
+  padding: 10px;
+}
 
 /* 🔹 Team Section */
 .team-section {
