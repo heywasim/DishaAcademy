@@ -4,8 +4,8 @@ document.getElementById('searchForm').addEventListener('submit', function (e) {
 });
 
 function fetchData() {
-    const className = document.getElementById('class').value;
-    const rollNumber = document.getElementById('roll').value;
+    const className = document.getElementById('class').value.trim().toLowerCase();
+    const rollNumber = document.getElementById('roll').value.trim().toLowerCase();
     const resultTable = document.getElementById('resultTable');
     const loadingDiv = document.getElementById('loading');
 
@@ -18,16 +18,28 @@ function fetchData() {
         .then(response => response.text())
         .then(csv => {
             const data = CSVToArray(csv);
-            const headers = data[0];
+            const headers = data[0].map(header => header.trim().toLowerCase()); // Normalize headers to lowercase
+            const classIndex = headers.findIndex(header => header === 'class');
+            const rollIndex = headers.findIndex(header => header === 'roll number');
+
+            if (classIndex === -1 || rollIndex === -1) {
+                resultTable.innerHTML = "<tr><td colspan='2'>Error: 'Class' or 'Roll Number' column not found in sheet.</td></tr>";
+                loadingDiv.style.display = 'none';
+                return;
+            }
+
             let found = false;
 
             for (let i = 1; i < data.length; i++) {
                 const row = data[i];
-                if (row[1] === className && row[2] === rollNumber) {
+                const rowClass = (row[classIndex] || "").trim().toLowerCase();
+                const rowRoll = (row[rollIndex] || "").trim().toLowerCase();
+
+                if (rowClass === className && rowRoll === rollNumber) {
                     found = true;
                     for (let j = 0; j < headers.length; j++) {
                         const newRow = resultTable.insertRow();
-                        newRow.insertCell(0).innerText = headers[j];
+                        newRow.insertCell(0).innerText = data[0][j]; // original header
                         newRow.insertCell(1).innerText = row[j];
                     }
                     break;
