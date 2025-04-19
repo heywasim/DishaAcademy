@@ -18,8 +18,8 @@ function showSlides() {
     index = (index + 1) % slides.length;
 }
 
-// Set interval to change slides every 3 seconds
-setInterval(showSlides, 3000);
+// Set interval to change slides every 4.5 seconds
+setInterval(showSlides, 4500);
 
 // Initial call to show the first slide
 showSlides();
