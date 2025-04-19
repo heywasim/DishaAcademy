@@ -8,5 +8,5 @@ function showSlides() {
     index = (index + 1) % slides.length;
 }
 
-setInterval(showSlides, 3000); // 4 sec per slide
+setInterval(showSlides, 4000); // 4 sec per slide
 showSlides();
