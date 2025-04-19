@@ -59,41 +59,29 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
-/* 🔹 Slider Section */
-.slider {
-    width: 100%;
-    height: 320px;
-    overflow: hidden;
-    position: relative;
-    margin: 10px auto; /* Center align */
-}
-
-
+/* Slider Container */
 .slides {
-    position: relative;
+    display: flex;
+    transition: transform 1s ease; /* Smooth slide transition */
     width: 100%;
     height: 100%;
 }
 
+/* Individual Slides */
 .slide {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    border: 5px solid  rgba(161, 214, 226, 1);; /* Border issue fixed */
-    border-radius: 2%;
-    opacity: 0;
-    transition: opacity 1.5s ease-in-out;
+    position: relative;
+    transition: opacity 1.5s ease-in-out; /* Smooth fade effect */
+    opacity: 0; /* Default to invisible */
 }
 
+/* Active Slide */
+.slide.active {
+    opacity: 1; /* When active, it will become visible */
+}
 
-/* 🔹 Fade-Out Effect */
-@keyframes fadeEffect {
-    0% { opacity: 1; }
-    80% { opacity: 0.8; }
-    100% { opacity: 0.3; }
 }
 /* 🔹 latest news er jonno */
 .news-section {
