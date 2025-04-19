@@ -155,9 +155,9 @@ nav ul li a:hover {
 .text-box {
     width: 65%;
     padding: 15px;
-    background: rgba(161, 214, 226, 0.5);
+    background: rgba(242, 223, 241, 0.5);
     border-radius: 5px;
-    border: 2px solid rgba(22,22,22, 1); /* Border added */
+    border: 2px solid rgba(22,22,22, 0.4); /* Border added */
 }
 
 
