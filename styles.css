@@ -99,8 +99,8 @@ nav ul li a:hover {
 .news-section {
   display: flex;
   align-items: center;
-  border: 2px solid #007bff;
-  border-radius: 10px;
+  border: 2px solid #940c0c;
+  border-radius: 5px;
   overflow: hidden;
   margin: 20px 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
