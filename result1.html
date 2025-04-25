@@ -1,93 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Term 1 Result</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body { font-family: Arial, sans-serif; padding: 0px; }
-        #loading { display: none; color: blue; font-weight: bold; margin: 10px 0; }
-        table, td { border: 1px solid black; border-collapse: collapse; padding: 8px; }
-        
-        <style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Term 1 Result</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 0;
+    }
+
+    #loading {
+      display: none;
+      color: blue;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    table, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+      padding: 8px;
+    }
+
     img {
-      width: 100px; /* Change size as needed */
+      max-width: 100%;
       height: auto;
       border: 2px solid #000;
       border-radius: 8px;
+      display: block;
+      margin: 10px auto;
     }
   </style>
-    </style>
 </head>
 <body>
 
-    <header>
-        <div class="top-bar">
-            <img src="logo.png" alt="Disha Academy Logo" height="50">
-            <h1>Disha Academy</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="exam.html">Examination</a></li>
-            </ul>
-        </nav>
-    </header>
- <img src="tr1.png" alt="Result Photo">
-
-    <h2>this is not final</h2>
-<label for="studentName">Student's Name:</label>
-<input type="text" id="studentName" name="studentName" placeholder="Enter Student's Name"> 
-<br><br>
-    <form id="searchForm">
-        <label for="class">Class:</label>
-        <select id="class" name="class">
-            <option value="" disabled selected>Select Class</option>
-            <option value="LKG A">LKG A</option>
-            <option value="LKG B">LKG B</option>
-            <option value="UKG A">UKG A</option>
-            <option value="I A">I A</option>
-            <option value="I B">I B</option>
-            <option value="II A">II</option>
-            <option value="III A">III</option>
-            <option value="IV A">IV</option>
-        </select><br><br>
-
-       
-       <label for="roll">Roll Number:</label>
-<select id="roll" name="roll">
-  <option value="" disabled selected>Select Roll Number</option>
-  <!-- Roll numbers 1 to 40 -->
-  <script>
-    for (let i = 1; i <= 40; i++) {
-      document.write(`<option value="${i}">${i}</option>`);
-    }
-  </script>
-</select>
-<br><br>
-
-
-        <input type="submit" value="Search">
-    </form>
-    <div id="loading">Loading, please wait...</div>
-
-    <h3>Result:</h3>
-    <table id="resultTable"></table> 
-
- <h2>Result Will be declared on 26th April 2025 at 7 AM </h2>
-    <footer>
-    <div class="footer-content">
-        <p><strong>Address:</strong> Disha Academy, Kamarpara Baligram, Ranitala, Murshidabad, 742135</p>
-        <p><strong>📞 Helpline</strong> +91 9735803060</p>
-        <p><strong>✉️ Email:</strong> dishaacademy.com@gmail.com</p>
-        Developed by &copy;<a href="https://t.me/heywasim" style="color: rgb(89, 200, 255);">David</a> <!-- forest green -->
-
+  <header>
+    <div class="top-bar">
+      <img src="logo.png" alt="Disha Academy Logo" height="50">
+      <h1>Disha Academy</h1>
     </div>
-</footer>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="exam.html">Examination</a></li>
+      </ul>
+    </nav>
+  </header>
 
+  <img src="tr1.png" alt="Result Photo">
 
-    <script src="script2.js"></script>
+  <h2>This is not final</h2>
+
+  <label for="studentName">Student's Name:</label>
+  <input type="text" id="studentName" name="studentName" placeholder="Enter Student's Name"> 
+  <br><br>
+
+  <form id="searchForm">
+    <label for="class">Class:</label>
+    <select id="class" name="class">
+      <option value="" disabled selected>Select Class</option>
+      <option value="LKG A">LKG A</option>
+      <option value="LKG B">LKG B</option>
+      <option value="UKG A">UKG A</option>
+      <option value="I A">I A</option>
+      <option value="I B">I B</option>
+      <option value="II A">II</option>
+      <option value="III A">III</option>
+      <option value="IV A">IV</option>
+    </select><br><br>
+
+    <label for="roll">Roll Number:</label>
+    <select id="roll" name="roll">
+      <option value="" disabled selected>Select Roll Number</option>
+      <script>
+        for (let i = 1; i <= 40; i++) {
+          document.write(`<option value="${i}">${i}</option>`);
+        }
+      </script>
+    </select>
+    <br><br>
+
+    <input type="submit" value="Search">
+  </form>
+
+  <div id="loading">Loading, please wait...</div>
+
+  <h3>Result:</h3>
+  <table id="resultTable"></table> 
+
+  <h2>Result will be declared on 26th April 2025 at 7 AM</h2>
+
+  <footer>
+    <div class="footer-content">
+      <p><strong>Address:</strong> Disha Academy, Kamarpara Baligram, Ranitala, Murshidabad, 742135</p>
+      <p><strong>📞 Helpline:</strong> +91 9735803060</p>
+      <p><strong>✉️ Email:</strong> dishaacademy.com@gmail.com</p>
+      Developed by &copy; <a href="https://t.me/heywasim" style="color: rgb(89, 200, 255);">David</a>
+    </div>
+  </footer>
+
+  <script src="script2.js"></script>
 </body>
 </html>
