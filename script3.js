@@ -12,13 +12,13 @@ function fetchData() {
     resultTable.innerHTML = "";
     loadingDiv.style.display = 'block';
 
-    const sheetUrl = https://docs.google.com/spreadsheets/d/e/2PACX-1vQZx8wdmml7j7N1gISQaUExmVMAMmTHzwB3gob457MDim0KUApatv4AeSvycOHwyBNCWkvo56PP6dbu/pubhtml?output=csv';
+    const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQZx8wdmml7j7N1gISQaUExmVMAMmTHzwB3gob457MDim0KUApatv4AeSvycOHwyBNCWkvo56PP6dbu/pub?output=csv";
 
     fetch(sheetUrl)
         .then(response => response.text())
         .then(csv => {
             const data = CSVToArray(csv);
-            const headers = data[0].map(header => header.trim().toLowerCase()); // Normalize headers to lowercase
+            const headers = data[0].map(header => header.trim().toLowerCase());
             const classIndex = headers.findIndex(header => header === 'class');
             const rollIndex = headers.findIndex(header => header === 'roll number');
 
@@ -39,7 +39,7 @@ function fetchData() {
                     found = true;
                     for (let j = 0; j < headers.length; j++) {
                         const newRow = resultTable.insertRow();
-                        newRow.insertCell(0).innerText = data[0][j]; // original header
+                        newRow.insertCell(0).innerText = data[0][j]; // show original header
                         newRow.insertCell(1).innerText = row[j];
                     }
                     break;
