@@ -1,104 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Term 2 Result</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Disha Academy Result</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 0;
-    }
-
-    #loading {
-      display: none;
-      color: blue;
-      font-weight: bold;
-      margin: 10px 0;
-    }
-
-    table, td {
-      border: 1px solid black;
-      border-collapse: collapse;
-      padding: 8px;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      border: 2px solid #000;
-      border-radius: 8px;
-      display: block;
-      margin: 10px auto;
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    header, footer { text-align: center; }
+    img.logo { height: 60px; }
+    form { margin-bottom: 20px; }
+    label { display: block; margin: 10px 0; }
+    input { padding: 5px; width: 200px; }
+    .btn { padding: 8px 12px; margin: 5px; cursor: pointer; }
+    #loading { color: blue; display: none; font-weight: bold; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #000; padding: 8px; }
+    #timestamp { margin-top: 10px; font-size: 14px; }
+    @media print {
+      body * { visibility: hidden; }
+      #printSection, #printSection * { visibility: visible; }
+      #printSection { position: absolute; left: 0; top: 0; width: 100%; }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="top-bar">
-      <img src="logo.png" alt="Disha Academy Logo" height="50" />
-      <h1>Disha Academy</h1>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="exam.html">Examination</a></li>
-      </ul>
-    </nav>
+    <img src="logo.png" alt="Logo" class="logo">
+    <h2>Disha Academy - Term 2 Result</h2>
   </header>
 
-  <img src="tr2.png" alt="Term 2 Result Photo" />
-
-  <h2>Search Student's Term 2 Result</h2>
-
-  <label for="studentName">Student's Name:</label>
-  <input type="text" id="studentName" name="studentName" placeholder="Enter Student's Name" />
-  <br /><br />
-
   <form id="searchForm">
-    <label for="class">Class:</label>
-    <select id="class" name="class">
-      <option value="" disabled selected>Select Class</option>
-      <option value="LKG A">LKG A</option>
-      <option value="LKG B">LKG B</option>
-      <option value="UKG A">UKG A</option>
-      <option value="I A">I A</option>
-      <option value="I B">I B</option>
-      <option value="II A">II</option>
-      <option value="III A">III</option>
-      <option value="IV A">IV</option>
-    </select>
-    <br /><br />
-
-    <label for="roll">Roll Number:</label>
-    <select id="roll" name="roll">
-      <option value="" disabled selected>Select Roll Number</option>
-      <script>
-        for (let i = 1; i <= 40; i++) {
-          document.write(`<option value="${i}">${i}</option>`);
-        }
-      </script>
-    </select>
-    <br /><br />
-
-    <input type="submit" value="Search" />
+    <label>Student Name: <input type="text" id="studentName" required></label>
+    <label>Class: <input type="text" id="class" required placeholder="e.g. I A, II B"></label>
+    <label>Roll Number: <input type="text" id="roll" required></label>
+    <input type="submit" value="Search">
   </form>
 
-  <div id="loading">Loading, please wait...</div>
+  <div id="loading">Fetching result, please wait...</div>
 
-  <h3>Result:</h3>
-  <table id="resultTable"></table>
+  <div id="printSection">
+    <table id="resultTable"></table>
+    <p id="timestamp"></p>
+  </div>
+
+  <div>
+    <button class="btn" onclick="window.print()">🖨️ Print</button>
+    <button class="btn" onclick="saveAsPDF()">📥 Save as PDF</button>
+  </div>
 
   <footer>
-    <div class="footer-content">
-      <p><strong>Address:</strong> Disha Academy, Kamarpara Baligram, Ranitala, Murshidabad, 742135</p>
-      <p><strong>📞 Helpline:</strong> +91 9735803060</p>
-      <p><strong>✉️ Email:</strong> dishaacademy.com@gmail.com</p>
-      Developed by &copy; <a href="https://t.me/heywasim" style="color: rgb(89, 200, 255);">David</a>
-    </div>
+    <p><strong>Disha Academy</strong>, Kamarpara Baligram, Ranitala, Murshidabad</p>
+    <p>📞 9735803060 | ✉️ dishaacademy.com@gmail.com</p>
   </footer>
 
   <script src="script3.js"></script>
