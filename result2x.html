@@ -18,10 +18,14 @@
       margin: 10px 0;
     }
 
-    table, td {
+    table, th, td {
       border: 1px solid black;
       border-collapse: collapse;
       padding: 8px;
+    }
+
+    th {
+      background: #f2f2f2;
     }
 
     img {
@@ -55,12 +59,12 @@
   <h2>Search Student's Term 2 Result</h2>
 
   <form id="searchForm">
-    <label for="studentName">Student's Name:</label>
-    <input type="text" id="studentName" name="studentName" placeholder="Enter Student's Name" />
+    <label for="studentName"><strong>Student's Name:</strong></label>
+    <input type="text" id="studentName" name="studentName" placeholder="Enter Student's Name" required />
     <br /><br />
 
-    <label for="class">Class:</label>
-    <select id="class" name="class">
+    <label for="class"><strong>Class:</strong></label>
+    <select id="class" name="class" required>
       <option value="" disabled selected>Select Class</option>
       <option value="LKG A">LKG A</option>
       <option value="LKG B">LKG B</option>
@@ -73,8 +77,8 @@
     </select>
     <br /><br />
 
-    <label for="roll">Roll Number:</label>
-    <select id="roll" name="roll">
+    <label for="roll"><strong>Roll Number:</strong></label>
+    <select id="roll" name="roll" required>
       <option value="" disabled selected>Select Roll Number</option>
       <script>
         for (let i = 1; i <= 40; i++) {
@@ -96,11 +100,3 @@
     <div class="footer-content">
       <p><strong>Address:</strong> Disha Academy, Kamarpara Baligram, Ranitala, Murshidabad, 742135</p>
       <p><strong>📞 Helpline:</strong> +91 9735803060</p>
-      <p><strong>✉️ Email:</strong> dishaacademy.com@gmail.com</p>
-      Developed by &copy; <a href="https://t.me/heywasim" style="color: rgb(89, 200, 255);">David</a>
-    </div>
-  </footer>
-
-  <script src="script3x.js"></script>
-</body>
-</html>
