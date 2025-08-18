@@ -12,7 +12,6 @@ function fetchData() {
 
     resultTable.innerHTML = "";
 
-    // ✅ Require all three fields
     if (!className || !rollNumber || !studentName) {
         const row = resultTable.insertRow();
         row.insertCell(0).colSpan = 2;
@@ -28,13 +27,15 @@ function fetchData() {
         .then(response => response.text())
         .then(csv => {
             const data = CSVToArray(csv);
-            const headers = data[0].map(header => header.trim().toLowerCase());
-            const classIndex = headers.findIndex(header => header === 'class');
-            const rollIndex = headers.findIndex(header => header === 'roll number');
-            const nameIndex = headers.findIndex(header => header === 'name');
+            const headers = data[0].map(h => h.trim().toLowerCase());
+
+            // 🔑 find exact column indexes for your sheet
+            const rollIndex = headers.indexOf("roll number");
+            const classIndex = headers.indexOf("class");
+            const nameIndex = headers.indexOf("student name");
 
             if (classIndex === -1 || rollIndex === -1 || nameIndex === -1) {
-                resultTable.innerHTML = "<tr><td colspan='2'>Error: 'Class', 'Roll Number' or 'Name' column not found in sheet.</td></tr>";
+                resultTable.innerHTML = "<tr><td colspan='2'>Error: Could not detect Class / Roll / Student Name columns in sheet.</td></tr>";
                 loadingDiv.style.display = 'none';
                 return;
             }
@@ -47,7 +48,6 @@ function fetchData() {
                 const rowRoll = (row[rollIndex] || "").trim().toLowerCase();
                 const rowName = (row[nameIndex] || "").trim().toLowerCase();
 
-                // ✅ Strict: all three must match
                 if (rowClass === className && rowRoll === rollNumber && rowName === studentName) {
                     found = true;
                     for (let j = 0; j < headers.length; j++) {
@@ -62,7 +62,7 @@ function fetchData() {
             if (!found) {
                 const noResultRow = resultTable.insertRow();
                 noResultRow.insertCell(0).colSpan = 2;
-                noResultRow.cells[0].innerText = "No result found - Contact 9735803060.";
+                noResultRow.cells[0].innerText = "No result found - Please check details.";
             }
 
             loadingDiv.style.display = 'none';
@@ -73,7 +73,7 @@ function fetchData() {
         });
 }
 
-// CSV to Array parser
+// CSV parser
 function CSVToArray(strData, strDelimiter = ",") {
     const objPattern = new RegExp((
         "(\\" + strDelimiter + "|\\r?\\n|\\r|^)" +
