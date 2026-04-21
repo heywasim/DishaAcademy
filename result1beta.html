@@ -1,17 +1,55 @@
-<div class="header">
-    <img src="logo.png" class="logo">
-    <div>
-        <h1>Disha Academy</h1>
-        <p>Kamarpara, Baligram, Ranitala, Murshidabad</p>
-        <p>📞 9735803060 | 🌐 dishaac.in</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Disha Academy Result Portal</title>
+
+<link rel="stylesheet" href="style1beta.css">
+
+<!-- Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+<!-- PDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+
+<!-- PapaParse -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<div class="card">
+
+    <div class="header">
+        <img src="logo.png" class="logo">
+        <div>
+            <h1>Disha Academy</h1>
+            <p>Kamarpara, Baligram, Ranitala, Murshidabad</p>
+            <p>📞 9735803060 | 🌐 dishaac.in</p>
+        </div>
     </div>
+
+    <h2>Student Result Portal</h2>
+
+    <form id="searchForm">
+        <input type="text" id="roll" placeholder="Roll Number">
+        <input type="text" id="name" placeholder="Student Name">
+        <input type="text" id="class" placeholder="Class">
+        <button type="submit">Search</button>
+    </form>
+
+    <div id="resultCard" class="result hidden"></div>
+
+    <button id="downloadBtn" class="download hidden">Download PDF</button>
+
 </div>
 
-<h2>Result Portal</h2>
-
-<form id="searchForm">
-    <input type="text" id="roll" placeholder="Roll Number">
-    <input type="text" id="name" placeholder="Student Name">
-    <input type="text" id="class" placeholder="Class">
-    <button type="submit">Search</button>
-</form>
+<script src="script1beta.js"></script>
+</body>
+</html>
