@@ -1,0 +1,17 @@
+<div class="header">
+    <img src="logo.png" class="logo">
+    <div>
+        <h1>Disha Academy</h1>
+        <p>Kamarpara, Baligram, Ranitala, Murshidabad</p>
+        <p>📞 9735803060 | 🌐 dishaac.in</p>
+    </div>
+</div>
+
+<h2>Result Portal</h2>
+
+<form id="searchForm">
+    <input type="text" id="roll" placeholder="Roll Number">
+    <input type="text" id="name" placeholder="Student Name">
+    <input type="text" id="class" placeholder="Class">
+    <button type="submit">Search</button>
+</form>
