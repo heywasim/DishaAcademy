@@ -12,6 +12,7 @@ function fetchData() {
 
     // 🔴 Clear old result, header, button
     resultTable.innerHTML = "";
+
     const oldHeader = document.getElementById("resultHeader");
     if (oldHeader) oldHeader.remove();
 
@@ -114,9 +115,18 @@ function fetchData() {
         });
 }
 
-// 📄 PDF Download Function
+// ✅ FIXED PDF FUNCTION (ONLY RESULT SECTION)
 function downloadPDF() {
-    const content = document.getElementById("resultTable").parentElement.innerHTML;
+
+    const header = document.getElementById("resultHeader");
+    const table = document.getElementById("resultTable");
+
+    const content = `
+        <div>
+            ${header ? header.outerHTML : ""}
+            ${table.outerHTML}
+        </div>
+    `;
 
     const printWindow = window.open('', '', 'width=900,height=700');
 
@@ -125,11 +135,13 @@ function downloadPDF() {
         <head>
             <title>Student Result</title>
             <style>
-                body { font-family: Arial; text-align:center; }
+                body { font-family: Arial; text-align:center; padding:20px; }
                 table { width: 100%; border-collapse: collapse; margin-top:20px; }
                 td { border: 1px solid #000; padding: 8px; }
                 img { margin-bottom:10px; }
-                button { display:none; }
+                @media print {
+                    body { margin: 0; }
+                }
             </style>
         </head>
         <body>
@@ -139,6 +151,7 @@ function downloadPDF() {
     `);
 
     printWindow.document.close();
+    printWindow.focus();
     printWindow.print();
 }
 
