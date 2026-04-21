@@ -210,3 +210,6 @@ table tr:nth-child(even) {
 table tr:hover {
     background-color: #ddd;
 }
+@media print {
+    body { margin: 0; }
+}
