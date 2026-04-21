@@ -5,34 +5,58 @@ let allData = [];
 fetch(sheetURL)
 .then(res => res.text())
 .then(csv => {
-    const parsed = Papa.parse(csv, { header: true });
-    allData = parsed.data;
+    const parsed = Papa.parse(csv, { header: true, skipEmptyLines: true });
+
+    // 🔥 Clean keys (remove extra spaces)
+    allData = parsed.data.map(row => {
+        let cleanRow = {};
+        Object.keys(row).forEach(key => {
+            const cleanKey = key.trim().replace(/\s+/g, " ");
+            cleanRow[cleanKey] = row[key];
+        });
+        return cleanRow;
+    });
+
+    console.log("CLEAN DATA:", allData);
 });
 
 document.getElementById("searchForm").addEventListener("submit", function(e){
     e.preventDefault();
 
-    const roll = document.getElementById("roll").value.toLowerCase();
-    const name = document.getElementById("name").value.toLowerCase();
-    const cls = document.getElementById("class").value.toLowerCase();
+    if(allData.length === 0){
+        alert("Loading data... please wait");
+        return;
+    }
+
+    const roll = document.getElementById("roll").value.trim().toLowerCase();
+    const name = document.getElementById("name").value.trim().toLowerCase();
+    const cls = document.getElementById("class").value.trim().toLowerCase();
 
     const result = allData.find(row => {
 
-        return (
-            (!roll || row["Roll Number"]?.toLowerCase() === roll) &&
-            (!name || row["Student Name"]?.toLowerCase().includes(name)) &&
-            (!cls || row["Class"]?.toLowerCase() === cls)
-        );
+        const r = (row["Roll Number"] || "").toLowerCase();
+        const n = (row["Student Name"] || "").toLowerCase();
+        const c = (row["Class"] || "").toLowerCase();
 
+        return (
+            (!roll || r == roll) &&
+            (!name || n.includes(name)) &&
+            (!cls || c == cls)
+        );
     });
 
-    if(result) showResult(result);
-    else alert("No result found");
+    if(result){
+        showResult(result);
+    } else {
+        alert("No result found. Check input.");
+    }
 });
 
 function showResult(d){
 
-    const html = `
+    const resultDiv = document.getElementById("resultCard");
+
+    resultDiv.innerHTML = `
     <div class="marksheet">
 
         <h2 style="text-align:center;">Disha Academy</h2>
@@ -54,7 +78,7 @@ function showResult(d){
             <tr><td>GK</td><td>${d["General Knowledge"]}</td></tr>
         </table>
 
-        <h3>Total: ${d["Grand  Total"]}</h3>
+        <h3>Total: ${d["Grand Total"] || d["Grand  Total"]}</h3>
         <h3>Percentage: ${d["Percentage"]}%</h3>
         <h3>Rank: ${d["Class Rank"]}</h3>
         <h3>Result: ${d["RESULT"]}</h3>
@@ -62,20 +86,6 @@ function showResult(d){
     </div>
     `;
 
-    const resultDiv = document.getElementById("resultCard");
-    resultDiv.innerHTML = html;
-
     resultDiv.classList.remove("hidden");
     document.getElementById("downloadBtn").classList.remove("hidden");
-
-    gsap.from(".marksheet", {y:50, opacity:0, duration:0.8});
 }
-
-document.getElementById("downloadBtn").addEventListener("click", ()=>{
-    html2pdf().set({
-        margin: 0.5,
-        filename: "Disha_Result.pdf",
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
-    }).from(document.getElementById("resultCard")).save();
-});
