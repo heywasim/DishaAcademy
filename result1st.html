@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Term 1 Result</title>
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Term 2 Result</title>
+  <link rel="stylesheet" href="styles.css" />
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -18,10 +18,14 @@
       margin: 10px 0;
     }
 
-    table, td {
+    table, th, td {
       border: 1px solid black;
       border-collapse: collapse;
       padding: 8px;
+    }
+
+    th {
+      background: #f2f2f2;
     }
 
     img {
@@ -32,13 +36,13 @@
       display: block;
       margin: 10px auto;
     }
-  </style> 
+  </style>
 </head>
 <body>
 
   <header>
     <div class="top-bar">
-      <img src="logo.png" alt="Disha Academy Logo" height="50">
+      <img src="logo.png" alt="Disha Academy Logo" height="50" />
       <h1>Disha Academy</h1>
     </div>
     <nav>
@@ -50,31 +54,31 @@
     </nav>
   </header>
 
-  <img src="#" alt="Result Photo">
+  <img src="tr2.png" alt="Term 2 Result Photo" />
 
-  <h2>Result will publish on 25/04/2026</h2>
-  <!--
-
-<label for="studentName">Student's Name:</label>
-  <input type="text" id="studentName" name="studentName" placeholder="Enter Student's Name"> 
-  <br><br> 
+  <h2>Search Student's Term 1 Result 2026</h2>
 
   <form id="searchForm">
-    <label for="class">Class:</label>
-    <select id="class" name="class">
+    <label for="studentName"><strong>Student's Name:</strong></label>
+    <input type="text" id="studentName" name="studentName" placeholder="Enter Student's Name" required />
+    <br /><br />
+
+    <label for="class"><strong>Class:</strong></label>
+    <select id="class" name="class" required>
       <option value="" disabled selected>Select Class</option>
       <option value="LKG A">LKG A</option>
       <option value="LKG B">LKG B</option>
       <option value="UKG A">UKG A</option>
       <option value="I A">I A</option>
       <option value="I B">I B</option>
-      <option value="II A">II</option>
-      <option value="III A">III</option>
-      <option value="IV A">IV</option>
-    </select><br><br>
+      <option value="II A">II A</option>
+      <option value="III A">III A</option>
+      <option value="IV A">IV A</option>
+    </select>
+    <br /><br />
 
-    <label for="roll">Roll Number:</label>
-    <select id="roll" name="roll">
+    <label for="roll"><strong>Roll Number:</strong></label>
+    <select id="roll" name="roll" required>
       <option value="" disabled selected>Select Roll Number</option>
       <script>
         for (let i = 1; i <= 40; i++) {
@@ -82,17 +86,15 @@
         }
       </script>
     </select>
-    <br><br>
+    <br /><br />
 
-    <input type="submit" value="Search">
+    <input type="submit" value="Search" />
   </form>
 
   <div id="loading">Loading, please wait...</div>
 
   <h3>Result:</h3>
-  <table id="resultTable"></table> -->
-
-
+  <table id="resultTable"></table>
 
   <footer>
     <div class="footer-content">
@@ -103,6 +105,6 @@
     </div>
   </footer>
 
-  <script src="script2.js"></script>
+  <script src="script3x.js"></script>
 </body>
 </html>
