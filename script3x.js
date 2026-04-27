@@ -54,7 +54,7 @@ function fetchData() {
                 const rowRoll = (row[rollIndex] || "").trim().toLowerCase();
                 const rowName = (row[nameIndex] || "").trim().toLowerCase();
 
-                if (rowClass === className && rowRoll === rollNumber && rowName === studentName) {
+                if (rowClass === className && rowRoll === rollNumber) {
                     found = true;
 
                     // 🏫 School Header
