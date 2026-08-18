@@ -28,7 +28,7 @@ function fetchData() {
 
     loadingDiv.style.display = 'block';
 
-    const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRmpy4Q8yES_k1wsGJKWblmea822ynfANhbURM2YQdkIECL6r8SwTxwN4csFmb8hmqLAaxvEZRr7h41/pubhtml";
+    const sheetUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRmpy4Q8yES_k1wsGJKWblmea822ynfANhbURM2YQdkIECL6r8SwTxwN4csFmb8hmqLAaxvEZRr7h41/pub?output=csv";
 
     fetch(sheetUrl)
         .then(response => response.text())
