@@ -63,7 +63,7 @@ function fetchData() {
                     headerDiv.innerHTML = `
                         <div style="text-align:center; margin-bottom:15px;">
                             <img src="logo.png" style="width:80px;"><br>
-                            <h2 style="margin:5px 0;">Disha Academy</h2>
+                            <h2 style="margin:5px 0;">Disha Academy<br>2nd Term Result 2026</h2>
                             <p style="margin:0; font-size:14px;">
                                 Kamarpara, Baligram, Ranitala, Murshidabad<br>
                                 Mob: 9735803060
