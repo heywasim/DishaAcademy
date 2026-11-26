@@ -990,3 +990,405 @@ img {
         gap: 13px;
     }
 }
+
+/* =====================================
+   STUDENT RESULT PORTAL
+===================================== */
+
+.result-banner {
+    min-height: 245px;
+    background:
+        linear-gradient(110deg,
+        rgba(7, 22, 42, 0.96),
+        rgba(23, 63, 112, 0.88)),
+        url("school1.jpg") center/cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    padding: 45px 20px;
+}
+
+.result-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 19, 37, 0.15);
+}
+
+.result-banner-content {
+    position: relative;
+    z-index: 2;
+}
+
+.result-banner-content > span {
+    color: var(--gold-light);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.result-banner h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 48px);
+    color: white;
+    margin: 17px 0 10px;
+}
+
+.result-banner p {
+    color: #dce5ef;
+    font-size: 15px;
+}
+
+
+/* MAIN */
+
+.result-main {
+    background: #f5f7fa;
+    padding: 70px 20px 85px;
+}
+
+.result-intro {
+    max-width: 700px;
+    margin: 0 auto 45px;
+    text-align: center;
+}
+
+.result-intro h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: var(--navy);
+}
+
+.result-intro p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+
+/* SEARCH CARD */
+
+.search-card {
+    max-width: 680px;
+    margin: auto;
+    background: white;
+    border-radius: 9px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(16, 37, 66, 0.09);
+    border: 1px solid #e9edf2;
+}
+
+.search-card-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 25px 30px;
+    background: var(--navy);
+    color: white;
+}
+
+.search-icon {
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+.search-card-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+}
+
+.search-card-header p {
+    font-size: 12px;
+    color: #c7d4e3;
+    margin-top: 5px;
+}
+
+.result-form {
+    padding: 30px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 22px;
+    flex: 1;
+    min-width: 0;
+}
+
+.form-group label {
+    color: var(--navy);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    height: 49px;
+    border: 1px solid #dce2e9;
+    background: #fbfcfe;
+    padding: 0 14px;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 13px;
+    color: var(--text);
+    outline: none;
+    transition: 0.25s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--gold);
+    background: white;
+    box-shadow: 0 0 0 3px rgba(213, 173, 98, 0.13);
+}
+
+.form-row {
+    display: flex;
+    gap: 18px;
+}
+
+.search-button {
+    width: 100%;
+    height: 51px;
+    border: none;
+    border-radius: 5px;
+    background: var(--gold);
+    color: var(--navy-dark);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    transition: 0.3s;
+}
+
+.search-button:hover {
+    background: var(--navy);
+    color: white;
+}
+
+.search-arrow {
+    font-size: 20px;
+}
+
+
+/* LOADING */
+
+.result-loading {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: var(--blue);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 18px;
+}
+
+.loader {
+    width: 19px;
+    height: 19px;
+    border: 3px solid #e1e7ef;
+    border-top-color: var(--gold);
+    border-radius: 50%;
+    animation: result-spin 0.8s linear infinite;
+}
+
+@keyframes result-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* RESULT DISPLAY */
+
+.result-display {
+    max-width: 1050px;
+    margin: 55px auto 0;
+}
+
+.result-display-heading {
+    margin-bottom: 20px;
+    padding-left: 5px;
+}
+
+.result-display-heading h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    color: var(--navy);
+}
+
+.result-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    background: white;
+    border-radius: 7px;
+    box-shadow: 0 8px 30px rgba(16, 37, 66, 0.06);
+}
+
+#resultTable {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    font-size: 13px;
+}
+
+#resultTable th {
+    background: var(--navy);
+    color: white;
+    padding: 15px 13px;
+    text-align: left;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+#resultTable td {
+    padding: 13px;
+    border: 1px solid #e9edf2;
+    color: var(--text);
+    text-align: left;
+}
+
+#resultTable tr:nth-child(even) {
+    background: #f7f9fc;
+}
+
+#resultTable tr:hover {
+    background: #fff9ec;
+}
+
+
+/* WINNER IMAGE */
+
+.winner-section {
+    max-width: 900px;
+    margin: 65px auto 0;
+    text-align: center;
+}
+
+.winner-image {
+    width: 100%;
+    height: auto;
+    max-height: 550px;
+    object-fit: contain;
+    border: 1px solid #e4e8ee;
+    border-radius: 8px;
+    box-shadow: 0 10px 35px rgba(16, 37, 66, 0.09);
+}
+
+
+/* HELP SECTION */
+
+.result-help {
+    max-width: 1050px;
+    margin: 50px auto 0;
+    padding: 25px;
+    background: white;
+    border-left: 4px solid var(--gold);
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    box-shadow: 0 5px 20px rgba(16, 37, 66, 0.04);
+}
+
+.help-symbol {
+    min-width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--navy);
+    color: var(--gold-light);
+    font-weight: 800;
+}
+
+.result-help h3 {
+    color: var(--navy);
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.result-help p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.result-help a {
+    display: inline-block;
+    margin-top: 12px;
+    color: #a47c36;
+    font-weight: 800;
+    font-size: 13px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .result-banner {
+        min-height: 205px;
+    }
+
+    .result-main {
+        padding: 50px 14px 60px;
+    }
+
+    .result-intro h2 {
+        font-size: 29px;
+    }
+
+    .search-card-header {
+        padding: 22px 18px;
+    }
+
+    .search-card-header h3 {
+        font-size: 18px;
+    }
+
+    .result-form {
+        padding: 23px 18px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .form-group {
+        margin-bottom: 19px;
+    }
+
+    .result-display-heading h3 {
+        font-size: 23px;
+    }
+
+    #resultTable {
+        min-width: 550px;
+    }
+
+    .winner-section {
+        margin-top: 45px;
+    }
+
+    .result-help {
+        padding: 20px 15px;
+        gap: 12px;
+    }
+}
+
